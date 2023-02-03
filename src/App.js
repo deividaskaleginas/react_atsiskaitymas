@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useContext } from "react";
+
+import { Footer, Header } from "./components/index";
+import { Add, Home, Login, Registration } from "./pages/index";
+
+import AppContext from "./context/appContext";
 
 function App() {
+  const { isLoggedIn } = useContext(AppContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route
+          path="/"
+          element={!isLoggedIn ? <Navigate to="/login" /> : <Home />}
+        />
+        <Route path="/" element={<Home />} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+        <Route path="/*" element={<h1>404 not found</h1>} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 

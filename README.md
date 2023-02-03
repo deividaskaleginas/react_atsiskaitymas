@@ -5,4 +5,4 @@ npm i uniqid,
 npm i styled-components,
 `npm start`.
 
-Atsidarius naują terminalą nunaviguoti į projekte esantį aplankalą src/constants ir terminale paleisti komandą "json-server --watch data.json --port  8080"
+Atsidarius naują terminalą nunaviguoti į projekte esantį aplankalą src/data ir terminale paleisti komandą "json-server --watch data.json --port  8080"

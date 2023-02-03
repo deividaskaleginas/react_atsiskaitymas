@@ -12,13 +12,7 @@ const AppProvider = ({ children }) => {
     },
   ]);
 
-  const [cards, setCard] = useState([
-    // {
-    //   id: "",
-    //   title: "",
-    //   description: "",
-    // },
-  ]);
+  const [cards, setCard] = useState([]);
 
   const [statuses, setStatuses] = useState({
     getUserStatus: "",
